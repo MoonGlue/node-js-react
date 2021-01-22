@@ -1,4 +1,4 @@
-import React, {memo, useState} from 'react';
+import React, {memo} from 'react';
 import {connect} from 'react-redux';
 import Select from 'react-select';
 import {
