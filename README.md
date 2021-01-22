@@ -9,7 +9,7 @@
 ### `npm install`
 ### `npm install react-select`
 
-##В основной папке:
+#### В основной папке:
 
 для запуска сервера:
 ### `node server`
