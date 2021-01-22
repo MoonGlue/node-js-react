@@ -55,6 +55,7 @@ const Route = ({
     };
 
     const removeRoute = async () => {
+        // eslint-disable-next-line no-restricted-globals
         if(confirm(`Маршрут '${routeName}' будет удалён. Продолжить?`)){
             const info = await removeRouteServer({routeId});
             console.log(info);
