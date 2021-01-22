@@ -1,0 +1,261 @@
+:root {
+  --base-font-family: 'Fira Sans', sans-serif, Helvetica;
+
+  --green-grey-color: #80e780;
+  --light-green-color: #8adf9cad;
+  --mid-green-color: #69af6977;
+  --mid-green-color-back: #7deb7dd3;
+  --dark-green-color: #133804ce;
+  --dark-grey-color: #414141c7;
+
+  --shadow-color: #00000029;
+  --route-back-color: #bddfbfc0;
+  --route-element-back-color: #b8ddb9e3;
+  --route-last-back-color: #84ac8c73;
+  --input-shadow-color: #222322;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: var(--base-font-family);
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(var(--mid-green-color-back), var(--green-grey-color)) center / cover no-repeat;
+}
+
+#main-header {
+  /* align-self: center; */
+  text-align: center;
+  font-size: clamp(1.8rem, 2.7vw, 3.125rem);
+  padding: 2vh 0;
+  color: var(--dark-green-color);
+}
+
+#second-header {
+  text-align: center;
+  font-size: clamp(1.8rem, 2.7vw, 3.125rem);
+  color: var(--dark-green-color);
+  padding-bottom: 1vh;
+}
+
+#line {
+  border: none; /* Убираем границу */
+  background-color: var(--dark-green-color); /* Цвет линии */
+  color: var(--dark-green-color); /* Цвет линии для IE6-7 */
+  height: 2px; /* Толщина линии */
+  width: 100%;
+}
+
+main {
+  width: 100%;
+  box-sizing: border-box;
+  padding-top: 4vh;
+  margin-bottom: 4vh;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  row-gap: 4vh;
+  column-gap: calc(8% / 3);
+  padding: 0 calc(100vw / 24);
+}
+
+.tp-route {
+  width: 23%;
+  box-sizing: border-box;
+  border-radius: 1vw;
+  padding: 1vw 1.2vw;
+  box-shadow: 2px 2px 4px var(--shadow-color);
+  background-color: var(--route-back-color);
+}
+
+.tp-route:last-child {
+  background-color: var(--route-last-back-color);
+  transition: background-color 1s ease;
+}
+
+.tp-route:last-child > .tp-route-header {
+  margin-bottom: 0;
+}
+
+.tp-route:last-child:hover {
+  background-color: var(--route-back-color);
+} 
+
+.tp-route:last-child > .tp-route-header {
+  font-weight: 400;
+}
+
+.tp-route:last-child > .tp-route-header:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.tp-route-block {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+}
+
+.tp-route-header {
+  align-items: center;
+  font-size: clamp(0.75rem, 2vw, 2rem);
+  font-weight: 600;
+  color: var(--dark-green-color);
+  margin-bottom: 1vw;
+}
+
+.tp-route-controls-row {
+  display: flex;
+  justify-content: center;
+  gap: calc(2vw / 3);
+}
+
+.tp-route-controls-icon {
+  width: 2vw;
+  height: 2vw;
+  opacity: 0.6;
+}
+
+.tp-route-controls-icon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.tp-route-choose {
+  font-size: clamp(0.75rem, 2vw, 2rem);
+  font-weight: 600;
+  color: var(--dark-green-color);
+  margin-bottom: 1vw;
+  background-color: var(--route-element-back-color);
+  width: 100%;
+}
+
+#tp-route-text {
+  font-size: clamp(0.75rem, 2vw, 2rem);
+  font-weight: 600;
+  color: var(--dark-green-color);
+  margin-bottom: 1vw;
+}
+
+ .tp-route-stops {
+  list-style: disc;
+  font-size: clamp(0.75rem, 2vw, 2rem);
+  font-weight: 600;
+  color: var(--dark-green-color);
+  margin-bottom: 1vw;
+  background-color: var(--route-element-back-color);
+  width: 100%;
+} 
+
+
+.tp-route-stop {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1vw;
+  padding: 0.2vw;
+  margin-bottom: 1vw;
+  border-radius: 0.75vw;
+  box-shadow: 2px 2px 4px var(--shadow-color);
+  background-color: var(--light-green-color);
+  border: 2px solid var(--light-green-color);
+  transition: background-color 0.5s ease, border 1s ease;
+}
+
+.tp-route-stop:hover {
+  background-color: var(--mid-green-color) opacity;
+  border-color: var(--dark-green-color);
+}
+
+.tp-route-stop-text {
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+}
+
+.tp-route-stop-controls-row {
+  display: flex;
+  justify-content: center;
+  gap: calc(2vw / 3);
+}
+
+.tp-route-stop-controls-row:first-child {
+  margin-bottom: calc(2vw / 3);
+}
+
+.tp-route-stop-controls-icon {
+  width: 2vw;
+  height: 2vw;
+  opacity: 0.6;
+}
+
+.tp-route-stop-controls-icon:hover {
+  opacity: 1;
+  cursor: pointer;
+}
+
+.up-arrow-icon {
+  background: url(../../assets/up-arrow.svg) center / cover;
+}
+
+.tp-route-stop:first-child .up-arrow-icon {
+  display: none;
+}
+
+.down-arrow-icon {
+  background: url(../../assets/down-arrow.svg) center / cover;
+}
+
+.tp-route-stop:last-child .down-arrow-icon {
+  display: none;
+}
+
+.edit-icon {
+  background: url(../../assets/edit.svg) center / cover;
+}
+
+.delete-icon {
+  background: url(../../assets/delete-button.svg) center / cover;
+}
+
+.tp-route-add-stop {
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+  color: var(--dark-grey-color);
+}
+
+.tp-route-add-stop:hover {
+  font-weight: 600;
+  cursor: pointer;
+}
+
+#add-route-input {
+  box-sizing: border-box;
+  width: 100%;
+  border: none;
+  border-radius: 0.7vw;
+  box-shadow: 0 0 4px var(--input-shadow-color);
+  padding: 0.6vw;
+  font-size: clamp(0.7rem, 1.5vw, 1.5rem);
+  color: var(--input-shadow-color);
+  opacity: 0.7;
+  outline: none;
+}
+
+#add-route-input:focus,
+#add-route-input:hover {
+  opacity: 1;
+}
+
+#author {
+  position: fixed; 
+  right: 0; top: 0; 
+  text-align: right;
+  font-size: clamp(1rem, 1vw, 3.125rem);
+  /* padding: 2vh 0; */
+  color: var(--dark-green-color);
+}
