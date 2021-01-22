@@ -252,7 +252,7 @@ main {
 }
 
 #author {
-  position: fixed; 
+  right: calc(100vw / 24); bottom: 0; 
   right: 0; top: 0; 
   text-align: right;
   font-size: clamp(1rem, 1vw, 3.125rem);
