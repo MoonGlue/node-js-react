@@ -76,6 +76,7 @@ const Route = ({
     }
 
     const options = [
+        {value: '0', label: 'Назаначение'},
         {value: '1', label: 'магистральный'},
         {value: '2', label: 'районный'},
         {value: '3', label: 'социальный'}
@@ -102,13 +103,8 @@ const Route = ({
         <div className="tp-route-choose">
         <Select 
             placeholder="Назаначение"
-            options={options}
-            value={options.find((element, index, array) => {
-                console.log(element.value);
-                if(Number(element.value) === Number(routePurp)) {console.log("changing...");return element.value};
-                console.log("ni",routePurp,element.value);
-                return false;
-            })}
+            options={options.slice(1)}
+            value={options[routePurp]}
             onChange={editRoutePurp}
         />
         </div>
