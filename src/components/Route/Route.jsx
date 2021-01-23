@@ -76,7 +76,7 @@ const Route = ({
     }
 
     const options = [
-        {value: '0', label: 'Назаначение'},
+        {value: '0', label: 'Назначение'},
         {value: '1', label: 'магистральный'},
         {value: '2', label: 'районный'},
         {value: '3', label: 'социальный'}
